@@ -10,6 +10,7 @@ function SearchExercices() {
       //   "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
       //   excerciseOptions
       // );
+      console.log(exercisesData);
       setSearch("");
     }
   };
