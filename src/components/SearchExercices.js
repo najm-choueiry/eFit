@@ -2,6 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 
 function SearchExercices() {
+  const [search, setSearch] = useState("");
+
+  const handleSearch = async () => {
+    if (search) {
+      // const exercisesData = await fetchData();
+    }
+  };
+
   return (
     <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
       <Typography
@@ -15,7 +23,7 @@ function SearchExercices() {
       <Box position="relative" mb="72px">
         <TextField
           value=""
-          onChange={(e) => {}}
+          onChange={(e) => setSearch(e.target.value.toLowerCase)}
           placeholder="Search Exercises"
           type="text"
           sx={{
@@ -37,6 +45,7 @@ function SearchExercices() {
             position: "absolute",
             ml: "2%",
           }}
+          onClick={handleSearch}
         >
           Search
         </Button>
