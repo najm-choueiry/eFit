@@ -5,6 +5,24 @@ function SearchExercices() {
   const [search, setSearch] = useState("");
 
   const [exercises, setExercises] = useState([]);
+  const [bodyParts, setBodyParts] = useState([]);
+
+  // to get the categories once the page loads
+  useEffect(() => {
+    const fetchExercisesData = async () => {
+      try {
+        const bodyPartsData = await fetchData(
+          // "https://exercisedb.p.rapidapi.com/exercises/bodyPartsList",
+          excerciseOptions
+        );
+        setBodyParts(["all", ...bodyPartsData]);
+      } catch (error) {
+        console.error("Error fetching exercises data:", error);
+      }
+    };
+
+    fetchExercisesData();
+  }, []);
 
   const handleSearch = async () => {
     if (search) {
