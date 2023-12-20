@@ -139,6 +139,13 @@ body {
   }
 }
 
+.herobanner-fitnessclub {
+  color: #FF2625;
+  font-weight: 600;
+  font-size: 26px;
+}
+
+
 @media screen and (max-width: 400px) {
   .exercise-card {
     width: 280px;
