@@ -12,6 +12,21 @@ function SearchExercices() {
       >
         Awsome Exercises You <br /> Should Know
       </Typography>
+      <Box position="relative" mb="72px">
+        <TextField
+          height="76px"
+          value=""
+          onChange={(e) => {}}
+          placeholder="Search Exercises"
+          type="text"
+          sx={{
+            input: { fontWeight: "700", border: "none", borderRadius: "4px" },
+            width: { lg: "1170px", xs: "350px" },
+            backgroundColor: "#fff",
+            borderRadius: "40px",
+          }}
+        />
+      </Box>
     </Stack>
   );
 }
