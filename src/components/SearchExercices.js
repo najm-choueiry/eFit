@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { excerciseOptions, fetchData } from "../utils/fetchData";
+import HorizontalScrollbar from "./HorizontalScrollbar";
+
 function SearchExercices() {
   const [search, setSearch] = useState("");
 
   const [exercises, setExercises] = useState([]);
   const [bodyParts, setBodyParts] = useState([]);
 
-  // to get the categories once the page loads
+  // ------------- to get the categories once the page loads
   useEffect(() => {
     const fetchExercisesData = async () => {
       try {
@@ -24,6 +26,7 @@ function SearchExercices() {
     fetchExercisesData();
   }, []);
 
+  // ------------- handle the search functionality
   const handleSearch = async () => {
     if (search) {
       const exercisesData = await fetchData(
@@ -86,6 +89,15 @@ function SearchExercices() {
         >
           Search
         </Button>
+      </Box>
+      <Box
+        sx={{
+          position: "relative",
+          width: "100%",
+          p: "20px",
+        }}
+      >
+        <HorizontalScrollbar data={bodyParts} />
       </Box>
     </Stack>
   );
