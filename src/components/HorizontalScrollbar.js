@@ -5,7 +5,7 @@ import { Box, Typography } from "@mui/material";
 import BodyPart from "./BodyPart";
 import RightArrowIcon from "../assets/icons/right-arrow.png";
 import LeftArrowIcon from "../assets/icons/left-arrow.png";
-import ExerciseCard from "./ExerciseCard.JS";
+// import ExerciseCard from "./src/components/ExerciseCard.js";
 
 const LeftArrow = () => {
   const { scrollPrev } = useContext(VisibilityContext);
@@ -39,7 +39,7 @@ const HorizontalScrollbar = ({ data, bodyParts, setBodyPart, bodyPart }) => (
         {bodyParts ? (
           <BodyPart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} />
         ) : (
-          <ExerciseCard exercise={item} />
+          <p> Exerice card</p>
         )}
       </Box>
     ))}
