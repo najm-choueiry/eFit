@@ -4,7 +4,7 @@ import { Box, Stack, Typography } from "@mui/material";
 
 import { excerciseOptions, fetchData } from "../utils/fetchData";
 
-import ExerciseCard from "./ExerciseCard.JS";
+import ExerciseCard from "./ExerciseCard";
 
 function Exercises({ exercises, bodyPart, setExercises }) {
   return (
