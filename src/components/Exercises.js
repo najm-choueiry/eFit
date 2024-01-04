@@ -22,6 +22,19 @@ function Exercises({ exercises, bodyPart, setExercises }) {
           <ExerciseCard key={index} exercise={exercise} />;
         })}
       </Stack>
+      <Stack mt="100px" alignItems="center">
+        {exercises.length > 9 && (
+          <Pagination
+            color="standard"
+            shape="rounded"
+            defaultPage={1}
+            count={Math.ceil(exercise.length / 9)}
+            page={currentPage}
+            onChange={paginate}
+            size="large"
+          />
+        )}
+      </Stack>
     </Box>
   );
 }
