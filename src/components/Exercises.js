@@ -57,7 +57,7 @@ function Exercises({ exercises, bodyPart, setExercises }) {
         justifyContent="center"
       >
         {currentExercises?.map((exercise, index) => {
-          <ExerciseCard key={index} exercise={exercise} />;
+          return <ExerciseCard key={index} exercise={exercise} />;
         })}
       </Stack>
       <Stack mt="100px" alignItems="center">
