@@ -46,9 +46,15 @@ const Details = ({ exerciseDetail }) => {
                 height: "100px",
               }}
             >
-              <img src={item.icon} alt={bodyPart} />
+              <img
+                src={item.icon}
+                alt={bodyPart}
+                style={{ width: "50px", height: "50px" }}
+              />
             </Button>
-            <Typography variant="h5">{item.name}</Typography>
+            <Typography variant="h5" textTransform="capitalize">
+              {item.name}
+            </Typography>
           </Stack>
         ))}
       </Stack>
