@@ -2,13 +2,19 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
 
-import { fetchData, excerciseOptions } from "../utils/fetchData";
+import {
+  fetchData,
+  excerciseOptions,
+  youtubeOptions,
+} from "../utils/fetchData";
 import Details from "../components/Details";
 import ExerciseVideos from "../components/ExerciseVideos";
 import SimilarExercises from "../components/SimilarExercises";
 
 const ExerciseDetail = () => {
   const [exerciseDetail, setExerciseDetail] = useState({});
+  const [exerciseVideos, setExerciseVideos] = useState([]);
+
   const { id } = useParams();
 
   useEffect(() => {
@@ -22,6 +28,12 @@ const ExerciseDetail = () => {
         excerciseOptions
       );
       setExerciseDetail(exerciseDetailData);
+
+      const exerciseVideosData = await fetchData(
+        `${youtubeSearchUrl}/search?q=${exerciseDetailData.name}`,
+        youtubeOptions
+      );
+      setExerciseVideos(exerciseVideosData);
     };
 
     fetchExercisesData();
@@ -30,7 +42,7 @@ const ExerciseDetail = () => {
   return (
     <Box>
       <Details exerciseDetail={exerciseDetail} />
-      <ExerciseVideos />
+      <ExerciseVideos exerciseVideos={exerciseVideos} />
       <SimilarExercises />
     </Box>
   );
