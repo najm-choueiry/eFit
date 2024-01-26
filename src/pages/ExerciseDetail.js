@@ -27,10 +27,10 @@ const ExerciseDetail = () => {
         `${exerciseDbUrl}/exercises/exercise/${id}`,
         excerciseOptions
       );
-      setExerciseDetail(exerciseDetailData);
+      setExerciseDetail(exerciseDetail.contents);
 
       const exerciseVideosData = await fetchData(
-        `${youtubeSearchUrl}/search?q=${exerciseDetailData.name}`,
+        `${youtubeSearchUrl}/search?query=${exerciseDetail.title}`,
         youtubeOptions
       );
       setExerciseVideos(exerciseVideosData);
@@ -44,7 +44,7 @@ const ExerciseDetail = () => {
       <Details exerciseDetail={exerciseDetail} />
       <ExerciseVideos
         exerciseVideos={exerciseVideos}
-        name={exerciseDetail.name}
+        name={exerciseDetail.title}
       />
       <SimilarExercises />
     </Box>
