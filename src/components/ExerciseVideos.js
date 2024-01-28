@@ -2,8 +2,6 @@ import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
 
 const ExerciseVideos = ({ exerciseVideos, name }) => {
-  console.log("exerciseVides in the second component ", exerciseVideos);
-
   if (!exerciseVideos || exerciseVideos.length === 0 || !name)
     return "Loading...";
 
