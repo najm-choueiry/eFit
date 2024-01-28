@@ -32,15 +32,19 @@ const ExerciseDetail = () => {
         `${youtubeSearchUrl}/search?query=${exerciseDetailData.name} exercise`,
         youtubeOptions
       );
-      setExerciseVideos(exerciseVideosData.content);
+      setExerciseVideos(exerciseVideosData.contents);
+      console.log("Fetched Data: ", exerciseDetailData, exerciseVideosData);
     };
 
     fetchExercisesData();
   }, [id]);
+  console.log("exerciseVideos outisde the return", exerciseVideos);
 
   return (
     <Box>
       <Details exerciseDetail={exerciseDetail} />
+      {console.log("exerciseVideos inside the return", exerciseVideos)}
+
       <ExerciseVideos
         exerciseVideos={exerciseVideos}
         name={exerciseDetail.name}

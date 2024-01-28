@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
 
 const ExerciseVideos = ({ exerciseVideos, name }) => {
-  console.log({ exerciseVideos });
+  console.log("exerciseVides in the second component ", exerciseVideos);
 
   if (!exerciseVideos || exerciseVideos.length === 0 || !name)
     return "Loading...";
@@ -26,7 +26,7 @@ const ExerciseVideos = ({ exerciseVideos, name }) => {
           <a
             key={index}
             className="exercise-video"
-            href={`https://youtube.com/watch?v=${item.video.video.Id}`}
+            href={`https://youtube.com/watch?v=${item.video.videoId}`}
             target="_blank"
             rel="noreferrer"
           >
