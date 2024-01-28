@@ -36,8 +36,13 @@ const Details = ({ exerciseDetail }) => {
           {name} bend is one of the best exercises to target your {target}. It
           will help you improve your mood and gain energy.
         </Typography>
-        {extraDetail.map((item) => (
-          <Stack key={item.name} direction="row" gap="24px" alignItems="center">
+        {extraDetail.map((item, index) => (
+          <Stack
+            key={(item.name, index)}
+            direction="row"
+            gap="24px"
+            alignItems="center"
+          >
             <Button
               sx={{
                 background: "#fff2db",
